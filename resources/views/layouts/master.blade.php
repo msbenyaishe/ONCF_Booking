@@ -69,9 +69,8 @@
         @endif
 
         @if (session('success'))
-            <div class="alert alert-success">
-                <span>✓</span>
-                <span>{{ session('success') }}</span>
+            <div class="alert alert-success" style="text-align: center;">
+                <span style="font-weight: 600;">{{ session('success') }}</span>
             </div>
         @endif
 
