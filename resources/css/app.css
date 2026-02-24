@@ -1,0 +1,446 @@
+/* ==========================================================================
+   Global base styles
+   ========================================================================== */
+
+:root {
+    --color-page-bg: #f5f6fa;
+    --color-surface: #ffffff;
+    --color-surface-soft: #f9fafb;
+    --color-border-subtle: #e2e8f0;
+    --color-border-strong: #cbd5e1;
+    --color-text-main: #111827;
+    --color-text-muted: #6b7280;
+    --color-accent: #0f766e;
+    --color-accent-soft: #14b8a6;
+    --color-danger: #dc2626;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-pill: 999px;
+    --shadow-soft: 0 8px 20px rgba(15, 23, 42, 0.08);
+    --transition-fast: 0.15s ease;
+    --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: var(--font-sans);
+    background: var(--color-page-bg);
+    color: var(--color-text-main);
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button {
+    font-family: inherit;
+}
+
+/* ==========================================================================
+   Generic layout helpers (used by Jetstream / auth / dashboard)
+   ========================================================================== */
+
+.app-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-page-bg);
+}
+
+.app-page-main {
+    width: 100%;
+    max-width: 1120px;
+    margin: 32px auto;
+    padding: 0 16px;
+}
+
+.app-page-footer {
+    margin-top: auto;
+    padding: 16px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
+.app-shell {
+    background: var(--color-surface);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--color-border-subtle);
+    padding: 24px 24px 20px;
+}
+
+/* ==========================================================================
+   Navigation (for layouts using @vite + partial navbar)
+   ========================================================================== */
+
+.site-nav {
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+}
+
+.site-nav-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.site-nav-left,
+.site-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-logo {
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #0f172a;
+}
+
+.site-logo-mark {
+    width: 26px;
+    height: 26px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #0f766e, #14b8a6);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 800;
+    margin-right: 6px;
+}
+
+.site-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.site-nav-link {
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    color: #4b5563;
+    text-decoration: none;
+    transition: background var(--transition-fast), color var(--transition-fast), transform 0.1s ease;
+}
+
+.site-nav-link:hover {
+    background: #e0f2fe;
+    color: #0f766e;
+    transform: translateY(-1px);
+    text-decoration: none;
+}
+
+.site-nav-user {
+    font-size: 0.9rem;
+    color: #4b5563;
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    padding: 8px 14px;
+    border-radius: var(--radius-pill);
+    border: 1px solid transparent;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    background: transparent;
+    color: var(--color-text-main);
+    transition:
+        background var(--transition-fast),
+        color var(--transition-fast),
+        border-color var(--transition-fast),
+        box-shadow 0.12s ease,
+        transform 0.1s ease;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-soft));
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(15, 118, 110, 0.35);
+}
+
+.btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 28px rgba(15, 118, 110, 0.45);
+    background: linear-gradient(135deg, #115e59, var(--color-accent));
+}
+
+.btn-secondary {
+    background: var(--color-surface-soft);
+    color: var(--color-text-main);
+    border-color: var(--color-border-subtle);
+}
+
+.btn-secondary:hover {
+    background: #e5f3ff;
+    border-color: #bfdbfe;
+}
+
+.btn-danger {
+    background: #dc2626;
+    color: #ffffff;
+}
+
+.btn-danger:hover {
+    background: #b91c1c;
+    transform: translateY(-1px);
+}
+
+.btn-lg {
+    padding: 10px 18px;
+    font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px 11px;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--color-border-strong);
+    background: var(--color-surface-soft);
+    font-size: 0.9rem;
+    color: var(--color-text-main);
+    outline: none;
+    transition:
+        border-color var(--transition-fast),
+        box-shadow var(--transition-fast),
+        background var(--transition-fast);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--color-text-muted);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 1px rgba(20, 184, 166, 0.5);
+    background: #ffffff;
+}
+
+label {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: 4px;
+}
+
+.field {
+    margin-bottom: 10px;
+}
+
+.field-error {
+    margin-top: 4px;
+    font-size: 0.8rem;
+    color: var(--color-danger);
+}
+
+/* ==========================================================================
+   Cards, tables, alerts
+   ========================================================================== */
+
+.card {
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border-subtle);
+    background: var(--color-surface);
+    padding: 18px 18px 14px;
+}
+
+.card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.card-muted {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+thead th {
+    text-align: left;
+    padding: 10px 10px;
+    background: #eef2ff;
+    color: #111827;
+    font-weight: 600;
+}
+
+tbody td {
+    padding: 10px 10px;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.7);
+}
+
+tbody tr:hover {
+    background: #f9fafb;
+}
+
+.alert {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 9px 13px;
+    border-radius: var(--radius-pill);
+    font-size: 0.88rem;
+    margin-bottom: 12px;
+}
+
+.alert-success {
+    background: #ecfdf5;
+    border: 1px solid #bbf7d0;
+    color: #166534;
+}
+
+.alert-error {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #b91c1c;
+}
+
+.badge-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+    font-size: 0.78rem;
+    font-weight: 500;
+    background: #eef2ff;
+    color: #4338ca;
+    border: 1px solid rgba(129, 140, 248, 0.5);
+}
+
+/* ==========================================================================
+   Auth & guest layouts (Jetstream-style screens)
+   ========================================================================== */
+
+.auth-layout {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+    background: radial-gradient(circle at top left, #e0f2fe, #f5f6fa 40%, #e0f2fe 80%);
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 420px;
+    background: var(--color-surface);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border-subtle);
+    box-shadow: var(--shadow-soft);
+    padding: 24px 22px 20px;
+}
+
+.auth-logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.auth-heading {
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+.auth-subtitle {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    text-align: center;
+    margin-bottom: 14px;
+}
+
+/* ==========================================================================
+   Tiny utility classes to keep older markup looking reasonable
+   (These are NOT Tailwind, just a minimal subset with our own values)
+   ========================================================================== */
+
+.text-center {
+    text-align: center;
+}
+
+.mt-3 {
+    margin-top: 0.75rem;
+}
+
+.mt-5 {
+    margin-top: 1.25rem;
+}
+
+.text-success {
+    color: #16a34a;
+}
+
+.text-danger {
+    color: #dc2626;
+}
+
