@@ -7,7 +7,7 @@
         <div>
             <div class="page-title">About</div>
             <div class="page-subtitle">
-                A ticket booking application inspired by modern travel platforms.
+                Quickly find available trains between cities.
             </div>
         </div>
     </div>
@@ -15,10 +15,9 @@
 
 @section('content')
 <div class="card">
-    <div class="card-title">ONCF Booking – University project</div>
+    <div class="card-title">ONCF Booking</div>
     <p class="card-muted">
-        This Laravel application simulates a real-world train ticket booking flow: trip search,
-        cart management, booking confirmation and an authenticated area for passengers.
+        Plan your train journey with ease and confidence. Search for trips, select your seats, and book tickets in just a few clicks. Manage your bookings and access your passenger account anytime for a smooth travel experience.
     </p>
 </div>
 @endsection

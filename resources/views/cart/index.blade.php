@@ -4,7 +4,7 @@
 
 @section('page_header')
     <div style="text-align: center; margin-bottom: 3rem;">
-        <h1 class="page-title">Your Cart</h1>
+        <h1 class="page-title">Cart</h1>
         <p class="page-subtitle" style="margin-left: auto; margin-right: auto;">
             Review your selected journeys, adjust quantities, and securely confirm your booking.
         </p>

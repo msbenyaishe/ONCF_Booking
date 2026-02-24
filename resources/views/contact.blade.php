@@ -7,7 +7,7 @@
         <div>
             <div class="page-title">Contact</div>
             <div class="page-subtitle">
-                Need help with your booking or for the project? Find useful contact details below.
+                Have questions or need assistance with your booking? Our support team is here to help.
             </div>
         </div>
     </div>
@@ -15,11 +15,11 @@
 
 @section('content')
 <div class="card">
-    <div class="card-title">Support & information</div>
+    <div class="card-title">Customer Support & Information</div>
     <p class="card-muted">
-        These contact details can be adapted to your university or a fictional ONCF company for your defence.
+        Reach out to us for booking inquiries, travel information, or general assistance.
     </p>
-    <p style="margin-top:10px;">Email: contact@oncf.ma</p>
-    <p>Phone: 080 200 200</p>
+    <p style="margin-top:10px;">Email: support@oncf.ma</p>
+    <p>Phone: +212 627957919</p>
 </div>
 @endsection
