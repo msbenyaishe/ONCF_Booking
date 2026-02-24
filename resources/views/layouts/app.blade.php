@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ONCF Booking</title>
-    @vite(['resources/css/style.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body class="auth-layout">
 
@@ -15,7 +16,9 @@
     </main>
 
     <footer class="site-footer">
-        <p>© {{ date('Y') }} ONCF Booking. Seamless travel from start to finish.</p>
+        <p>
+            &copy; {{ date('Y') }} ONCF Booking. Seamless travel from start to finish.
+        </p>
     </footer>
 
 </body>
