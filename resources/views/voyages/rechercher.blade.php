@@ -36,7 +36,7 @@
 
             <div class="form-group" style="margin-bottom: 0;">
                 <label for="travel_date" class="form-label">Date</label>
-                <input id="travel_date" class="form-control" type="date" name="travel_date" placeholder="dd/mm/yyyy">
+                <input id="travel_date" class="form-control" type="date" name="travel_date">
             </div>
 
             <div class="form-group" style="margin-bottom: 0; align-self: flex-end;">
