@@ -14,7 +14,7 @@
             @csrf
 
             @if ($errors->any())
-                <div class="alert alert-error" style="margin-bottom: 2rem; text-align:center;">
+                <div style="margin-bottom: 2rem; text-align:center; font-weight:600;">
                     <ul style="margin: 0; padding-left: 1rem;">
                         @foreach ($errors->all() as $error)
                             <li>{{ $error }}</li>

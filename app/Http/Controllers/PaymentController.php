@@ -80,6 +80,6 @@ class PaymentController extends Controller
 
         session()->forget('pending_commande_cart');
 
-        return view('stripe.cancel');
+        return view('payment.cancel');
     }
 }

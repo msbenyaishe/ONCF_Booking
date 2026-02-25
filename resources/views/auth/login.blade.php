@@ -13,6 +13,16 @@
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
+            @if ($errors->any())
+                <div style="margin-bottom: 2rem; font-weight:600; text-align:center;">
+                    <ul style="margin: 0;">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
             <div class="form-group">
                 <label class="form-label">Email Address</label>
                 <input type="email" name="email" class="form-control" placeholder="name@example.com" required>

@@ -353,6 +353,59 @@ select.form-control {
     width: 100%;
 }
 
+/* Alerts & Feedback */
+.alert {
+    padding: 1.25rem 1.75rem;
+    border-radius: var(--radius-sm);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.alert-success {
+    background-color: var(--success-bg);
+    color: var(--success);
+    border: 1px solid rgba(22, 101, 52, 0.15);
+}
+
+.alert-error {
+    background-color: var(--danger-bg);
+    color: var(--danger);
+    border: 1px solid rgba(153, 27, 27, 0.15);
+}
+
+.alert ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.alert li {
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.alert li::before {
+    content: "✕";
+    position: absolute;
+    left: 0;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.alert-success li::before {
+    content: "✓";
+}
+
 /* ==========================================================================
    Page Specific Architectures
    ========================================================================== */
