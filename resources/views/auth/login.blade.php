@@ -25,12 +25,12 @@
 
             <div class="form-group">
                 <label class="form-label">Email Address</label>
-                <input type="email" name="email" class="form-control" placeholder="name@example.com" required>
+                <input type="email" name="email" class="form-control" required>
             </div>
 
             <div class="form-group">
                 <label class="form-label">Password</label>
-                <input type="password" name="password" class="form-control" placeholder="••••••••" required>
+                <input type="password" name="password" class="form-control" required>
             </div>
 
             <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
