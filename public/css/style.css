@@ -614,6 +614,28 @@ select.form-control {
         padding: 1rem 1.5rem;
     }
 
+    /* Journey Card Responsiveness */
+    .trip-card {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2rem;
+        padding: 1.5rem;
+    }
+
+    .trip-actions-refined {
+        width: 100%;
+        border-top: 1px solid var(--bg-primary);
+        padding-top: 1.5rem;
+    }
+
+    .add-trip-form-refined {
+        gap: 1.5rem;
+    }
+
+    .trip-controls-upper {
+        gap: 1.5rem;
+    }
+
     .mobile-menu-btn {
         display: flex;
         align-items: center;
@@ -765,32 +787,14 @@ select.form-control {
         padding: 0 1rem;
     }
 
-    .trip-card {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 1.5rem;
-    }
-
-    .trip-action {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 1.5rem;
-        width: 100%;
-    }
-
-    .trip-price {
-        text-align: left;
-    }
-    
     .add-trip-form {
-        width: 100%;
-        flex-wrap: wrap;
-        justify-content: space-between;
+        flex-direction: column;
+        align-items: stretch;
     }
-    
-    .add-trip-form .btn {
+
+    .add-trip-form > div {
+        justify-content: space-between;
         width: 100%;
-        margin-top: 0.5rem;
     }
 
     .auth-layout {
