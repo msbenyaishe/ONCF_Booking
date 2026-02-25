@@ -498,7 +498,19 @@ select.form-control {
 .add-trip-form {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
+}
+
+.trip-price-qty {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.qty-control {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
 }
 
 /* Cart Table */
@@ -618,33 +630,71 @@ select.form-control {
     .trip-card {
         flex-direction: column;
         align-items: stretch;
-        gap: 1.5rem;
+        gap: 0;
         padding: 1.5rem;
     }
 
+    .trip-route {
+        margin-bottom: 1.5rem;
+    }
+
+    .trip-details {
+        font-size: 0.8rem;
+        background: var(--accent-light);
+        color: var(--accent);
+        padding: 0.2rem 0.6rem;
+        border-radius: 6px;
+        display: inline-block;
+        margin-top: 0.75rem;
+        font-weight: 500;
+    }
+
     .trip-action {
+        width: 100%;
+        border-top: 1px solid var(--border);
+        padding-top: 1.25rem;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .add-trip-form {
+        width: 100%;
         flex-direction: column;
         align-items: stretch;
         gap: 1.5rem;
+    }
+
+    .trip-price-qty {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         width: 100%;
-        border-top: 1px solid var(--bg-primary);
-        padding-top: 1.5rem;
     }
 
     .trip-price {
         text-align: left;
     }
-    
-    .add-trip-form {
-        width: 100%;
-        flex-direction: row;
-        justify-content: space-between;
+
+    .qty-control {
+        display: flex;
         align-items: center;
-        gap: 1rem;
+        gap: 0.75rem;
+    }
+
+    .qty-control .form-label {
+        margin: 0 !important;
+        font-size: 0.8rem;
+    }
+
+    .qty-input {
+        width: 70px !important;
+        padding: 0.5rem !important;
+        text-align: center;
     }
 
     .add-trip-form .btn {
-        flex: 1;
+        width: 100%;
+        margin-top: 0.5rem;
     }
     
     /* Dual fields (e.g., Register firstname/lastname) stacking */
