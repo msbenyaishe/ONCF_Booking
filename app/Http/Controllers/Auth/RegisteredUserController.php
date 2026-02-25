@@ -29,6 +29,8 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+        \Log::info('Registration request received', $request->all());
+
         $request->validate([
             'nom' => ['required', 'string', 'max:255'],
             'prenom' => ['required', 'string', 'max:255'],
@@ -37,19 +39,26 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        $user = User::create([
-            'nom' => $request->nom,
-            'prenom' => $request->prenom,
-            'tel' => $request->tel,
-            'email' => $request->email,
-            'role' => 'USER',
-            'password' => Hash::make($request->password),
-        ]);
+        try {
+            $user = User::create([
+                'nom' => $request->nom,
+                'prenom' => $request->prenom,
+                'tel' => $request->tel,
+                'email' => $request->email,
+                'role' => 'USER',
+                'password' => Hash::make($request->password),
+            ]);
 
-        event(new Registered($user));
+            \Log::info('User created successfully', ['user_id' => $user->id]);
 
-        Auth::login($user);
+            event(new Registered($user));
 
-        return redirect(route('dashboard', absolute: false));
+            Auth::login($user);
+
+            return redirect(route('dashboard', absolute: false));
+        } catch (\Exception $e) {
+            \Log::error('Error during registration', ['error' => $e->getMessage()]);
+            return redirect()->back()->withErrors(['error' => 'Registration failed. Please try again.']);
+        }
     }
 }

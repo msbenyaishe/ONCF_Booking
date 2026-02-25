@@ -136,13 +136,13 @@
                     <div>
                         <span style="display: block; font-size: 0.85rem; color: var(--text-muted);">Name</span>
                         <span style="font-size: 1.2rem; font-weight: 500; color: var(--text-main);">
-                            {{ $commande->client->prenom ?? 'Mohamed Said' }} {{ $commande->client->nom ?? 'Benyaishe' }}
+                            {{ $commande->client->prenom ?? Auth::user()->prenom ?? Auth::user()->name ?? 'Passenger' }} {{ $commande->client->nom ?? Auth::user()->nom ?? '' }}
                         </span>
                     </div>
                     <div>
                         <span style="display: block; font-size: 0.85rem; color: var(--text-muted);">Contact</span>
                         <span style="font-size: 1.2rem; font-weight: 500; color: var(--text-main);">
-                            {{ $commande->client->tel ?? '0627957919' }}
+                            {{ $commande->client->tel ?? Auth::user()->tel ?? Auth::user()->email ?? 'N/A' }}
                         </span>
                     </div>
                 </div>
@@ -155,6 +155,10 @@
 
             @if($commande->voyages && $commande->voyages->count())
                 @foreach($commande->voyages as $voyage)
+                    @php
+                        $qty = $voyage->pivot->qte ?? 1;
+                        $totalVoyagePrice = $voyage->prixVoyage * $qty;
+                    @endphp
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
                         <div style="flex: 1;">
                             <span style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.25rem;">Departure</span>
@@ -182,11 +186,11 @@
                     <div style="display: flex; justify-content: space-between; align-items: center; background: var(--bg-primary); padding: 1.5rem; border-radius: var(--radius-sm);">
                         <div>
                             <span style="display: block; font-size: 0.85rem; color: var(--text-muted);">Passengers</span>
-                            <span style="font-size: 1.1rem; font-weight: 500;">{{ $voyage->pivot->qte ?? 1 }}</span>
+                            <span style="font-size: 1.1rem; font-weight: 500;">{{ $qty }}</span>
                         </div>
                         <div style="text-align: right;">
                             <span style="display: block; font-size: 0.85rem; color: var(--text-muted);">Total Paid</span>
-                            <span style="font-size: 1.25rem; font-weight: 600; color: var(--accent);">{{ $voyage->prixVoyage }} DH</span>
+                            <span style="font-size: 1.25rem; font-weight: 600; color: var(--accent);">{{ number_format($totalVoyagePrice, 2) }} DH</span>
                         </div>
                     </div>
 

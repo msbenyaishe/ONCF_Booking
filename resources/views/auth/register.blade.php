@@ -13,6 +13,16 @@
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
+            @if ($errors->any())
+                <div class="alert alert-error" style="margin-bottom: 2rem; text-align:center;">
+                    <ul style="margin: 0; padding-left: 1rem;">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
             <div class="grid-2" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
                 <div class="form-group">
                     <label class="form-label">First Name</label>
