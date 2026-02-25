@@ -618,22 +618,38 @@ select.form-control {
     .trip-card {
         flex-direction: column;
         align-items: stretch;
-        gap: 2rem;
+        gap: 1.5rem;
         padding: 1.5rem;
     }
 
-    .trip-actions-refined {
+    .trip-action {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.5rem;
         width: 100%;
         border-top: 1px solid var(--bg-primary);
         padding-top: 1.5rem;
     }
 
-    .add-trip-form-refined {
-        gap: 1.5rem;
+    .trip-price {
+        text-align: left;
+    }
+    
+    .add-trip-form {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
     }
 
-    .trip-controls-upper {
-        gap: 1.5rem;
+    .add-trip-form .btn {
+        flex: 1;
+    }
+    
+    /* Dual fields (e.g., Register firstname/lastname) stacking */
+    .grid-2 {
+        grid-template-columns: 1fr !important;
     }
 
     .mobile-menu-btn {

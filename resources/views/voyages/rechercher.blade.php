@@ -70,18 +70,20 @@
                 </div>
 
                 <div class="trip-action">
-                    <div class="trip-price">
-                        <span class="trip-price-amount">{{ $voyage->prixVoyage }} DH</span>
-                        <span class="trip-price-label">Per passenger</span>
-                    </div>
-
                     <form method="POST" action="{{ route('cart.add') }}" class="add-trip-form">
                         @csrf
                         <input type="hidden" name="voyage_id" value="{{ $voyage->id }}">
                         
-                        <div style="display: flex; align-items: center; gap: 0.5rem;">
-                            <span class="form-label" style="margin: 0;">Qty</span>
-                            <input type="number" name="qte" value="1" min="1" class="form-control qty-input">
+                        <div class="trip-price-qty">
+                            <div class="trip-price">
+                                <span class="trip-price-amount">{{ $voyage->prixVoyage }} DH</span>
+                                <span class="trip-price-label">Per passenger</span>
+                            </div>
+
+                            <div class="qty-control">
+                                <span class="form-label" style="margin: 0;">Qty</span>
+                                <input type="number" name="qte" value="1" min="1" class="form-control qty-input">
+                            </div>
                         </div>
 
                         <button class="btn btn-secondary" type="submit">
