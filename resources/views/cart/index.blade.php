@@ -49,10 +49,10 @@
                     @php $total += $lineTotal; @endphp
 
                     <tr>
-                        <td style="font-weight: 500;">{{ $item['code_voyage'] }}</td>
-                        <td>{{ $item['prix'] }} DH</td>
+                        <td data-label="Journey" style="font-weight: 500;">{{ $item['code_voyage'] }}</td>
+                        <td data-label="Price">{{ $item['prix'] }} DH</td>
 
-                        <td>
+                        <td data-label="Quantity">
                             <form method="POST" action="{{ route('cart.update') }}" style="display: flex; gap: 0.5rem;">
                                 @csrf
                                 @method('PATCH')
@@ -66,9 +66,9 @@
                             </form>
                         </td>
 
-                        <td style="font-weight: 600; color: var(--accent);">{{ $lineTotal }} DH</td>
+                        <td data-label="Total" style="font-weight: 600; color: var(--accent);">{{ $lineTotal }} DH</td>
 
-                        <td style="text-align: right;">
+                        <td data-label="Actions" style="text-align: right;">
                             <form method="POST" action="{{ route('cart.remove') }}">
                                 @csrf
                                 @method('DELETE')

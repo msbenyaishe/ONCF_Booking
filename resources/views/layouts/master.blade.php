@@ -43,7 +43,7 @@
                     </form>
                 @else
                     <a href="{{ route('login') }}" class="nav-link">Sign in</a>
-                    <a href="{{ route('register') }}" class="btn btn-primary">Create account</a>
+                    <a href="{{ route('register') }}" class="btn btn-primary btn-nav">Create account</a>
                 @endauth
             </div>
             </div>
