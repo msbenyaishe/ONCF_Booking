@@ -36,7 +36,7 @@
 
             <div class="form-group" style="margin-bottom: 0;">
                 <label for="travel_date" class="form-label">Date</label>
-                <input id="travel_date" class="form-control" type="date" name="travel_date">
+                <input id="travel_date" class="form-control" type="date" name="travel_date" value="{{ request('travel_date') }}">
             </div>
 
             <div class="form-group" style="margin-bottom: 0; align-self: flex-end;">
@@ -60,9 +60,9 @@
             <article class="trip-card">
                 <div class="trip-route">
                     <div class="trip-stations">
-                        <span>{{ $voyage->villeDepart }}</span>
+                        <span>{{ $voyage->villeDepart }} ({{ \Carbon\Carbon::parse($voyage->heureDepart)->format('H:i') }})</span>
                         <span class="trip-stations-arrow">→</span>
-                        <span>{{ $voyage->villeDarrivee }}</span>
+                        <span>{{ $voyage->villeDarrivee }} ({{ \Carbon\Carbon::parse($voyage->heureDarrivee)->format('H:i') }})</span>
                     </div>
                     <div class="trip-details">
                         Journey {{ $voyage->code_voyage }}
